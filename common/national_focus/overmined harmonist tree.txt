@@ -1,0 +1,1447 @@
+focus_tree = {
+	id = overmine_harmonist
+
+	continuous_focus_position = { x = 50 y = 1000 }
+
+	focus = {
+		id = im_not_alone_in_this_new_world
+		icon = GFX_goal_generic_improve_relations
+		#prerequisite = { focus = my_mined_is_chained }
+		#available = {
+		#}
+
+		x = 23
+		y = 5
+		#relative_position_id = my_mined_is_chained
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower = 700
+			add_popularity = {
+				ideology = democratic
+				popularity = 1
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			}
+			create_intelligence_agency = {
+				name = "hidden mined"
+				icon = GFX_intelligence_agency_logo_agency
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+	
+	focus = {
+		id = what_to_focus
+		icon = GFX_goal_continuous_research
+		prerequisite = { focus = im_not_alone_in_this_new_world }
+		#available = {
+		#}
+
+		x = 0
+		y = 1
+		relative_position_id = im_not_alone_in_this_new_world
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			1211 = {
+				add_extra_state_shared_building_slots = 1
+			    add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			    }
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	#--------------------------------------------------------------
+	#the left path
+	#--------------------------------------------------------------
+
+
+	focus = {
+		id = search_up_north
+		icon = GFX_goal_derpy
+		prerequisite = { focus = what_to_focus }
+		#available = {
+		#}
+
+		x = -4
+		y = 1
+		relative_position_id = what_to_focus
+
+		cost = 2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = searching_up_north
+				days = 30
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = found_the_yaks_and_jaks
+		icon = GFX_goal_derpy
+		prerequisite = { focus = search_up_north }
+		available = {
+			not = {
+				has_idea = searching_up_north
+			}
+		}
+
+		x = -4
+		y = 1
+		relative_position_id = search_up_north
+
+		cost = 1
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 30
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = talk_with_yaks
+		icon = GFX_goal_derpy
+		prerequisite = { focus = found_the_yaks_and_jaks }
+		available = {
+			YAK = {
+				exists = yes
+			}
+		}
+		mutually_exclusive = { focus = talk_with_jaks }
+
+		x = -2
+		y = 1
+		relative_position_id = found_the_yaks_and_jaks
+
+		cost = 1
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 30
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = talk_with_jaks
+		icon = GFX_goal_derpy
+		prerequisite = { focus = found_the_yaks_and_jaks }
+		available = {
+			JAK = {
+				exists = yes
+			}
+		}
+		mutually_exclusive = { focus = talk_with_yaks }
+
+		x = 2
+		y = 1
+		relative_position_id = found_the_yaks_and_jaks
+
+		cost = 1
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 30
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = work_with_yaks
+		icon = GFX_goal_derpy
+		prerequisite = { focus = talk_with_yaks }
+		available = {
+			YAK = {
+				exists = yes
+			}
+		}
+		mutually_exclusive = { focus = work_with_jaks }
+
+		x = 0
+		y = 1
+		relative_position_id = talk_with_yaks
+
+		cost = 1
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			YAK = {
+				add_political_power = 50
+			}
+				add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = WAR_with_yaks
+		icon = GFX_goal_derpy
+		prerequisite = { focus = work_with_yaks }
+		available = {
+			or = {
+				and = {
+					YAK = {
+						has_war = yes
+					}
+					JAK = {
+						has_war = yes
+					}
+				}
+				and = {
+					YAK = {
+						has_civil_war = yes
+					}
+					JAK = {
+						has_civil_war = yes
+					}
+				}
+			}
+		}
+		mutually_exclusive = { focus = WAR_with_jaks }
+
+		x = 0
+		y = 1
+		relative_position_id = work_with_yaks
+		cost = 1
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			ROOT = {
+				add_to_war = {
+					targeted_alliance = YAK
+					enemy = JAK
+					hostility_reason = civil_war
+				}
+				declare_war_on = {
+					target = JAK
+					type = civil_war
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = work_with_jaks
+		icon = GFX_goal_derpy
+		prerequisite = { focus = talk_with_jaks }
+		available = {
+				JAK = {
+					exists = yes
+				}
+		}
+		mutually_exclusive = { focus = work_with_yaks }
+
+		x = 0
+		y = 1
+		relative_position_id = talk_with_jaks
+
+		cost = 1
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			YAK = {
+				add_political_power = 50
+			}
+				add_political_power = 50
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = WAR_with_jaks
+		icon = GFX_goal_derpy
+		prerequisite = { focus = work_with_jaks }
+		available = {
+			or = {
+				and = {
+					YAK = {
+						has_war = yes
+					}
+					JAK = {
+						has_war = yes
+					}
+				}
+				and = {
+					YAK = {
+						has_civil_war = yes
+					}
+					JAK = {
+						has_civil_war = yes
+					}
+				}
+			}
+		}
+		mutually_exclusive = { focus = WAR_with_yaks }
+
+		x = 0
+		y = 1
+		relative_position_id = work_with_jaks
+
+		cost = 1
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			ROOT = {
+				add_to_war = {
+					targeted_alliance = JAK
+					enemy = YAK
+					hostility_reason = civil_war
+				}
+				declare_war_on = {
+					target = YAK
+					type = civil_war
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = planing_for_later
+		icon = GFX_goal_derpy
+		prerequisite = { focus = found_the_yaks_and_jaks }
+		prerequisite = { focus = talk_with_jaks focus = talk_with_yaks }
+		available = {
+			YAK = {
+				has_war = no
+				exists = yes
+			}
+			JAK = {
+				has_war = no
+				exists = yes
+			}
+		}
+
+		x = 0
+		y = 4
+		relative_position_id = found_the_yaks_and_jaks
+
+		cost = 1
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_timed_idea = { 
+			    idea = extra_planing
+				days = 1095
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = useing_the_fallen
+		icon = GFX_goal_derpy
+		prerequisite = { focus = WAR_with_yaks focus = WAR_with_jaks }
+		available = {
+			or = {
+				YAK = {
+					exists = no
+				}
+				JAK = {
+					exists = no
+				}
+			}
+			and = {
+				YAK = {
+					has_war = no
+				}
+				JAK = {
+					has_war = no
+				}
+			}
+		}
+
+		x = -1
+		y = 1
+		relative_position_id = planing_for_later
+
+		cost = 1
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = useing_the_fallen
+				days = 730
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+    #--------------------------------------------------------------
+	#the right path
+	#--------------------------------------------------------------
+
+	focus = {
+		id = biomass_plant_conversion
+		icon = GFX_focus_generic_industry_2
+		prerequisite = { focus = what_to_focus }
+		available = {
+			NOT = {
+				has_idea = lost_mine2
+			}
+		}
+
+		x = 4
+		y = 1
+		relative_position_id = what_to_focus
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = { biomass_conversion }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = green_house's
+		icon = GFX_focus_SWE_beneath_sticks_and_stone
+		prerequisite = { focus = biomass_plant_conversion }
+		available = {
+			NOT = {
+				has_idea = lost_mine2
+			}
+		}
+
+		x = 7
+		y = 1
+		relative_position_id = biomass_plant_conversion
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = snow_clearing
+				days = 30
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = reactivating_the_mines
+		icon = GFX_focus_generic_steel
+		prerequisite = { focus = biomass_plant_conversion }
+		#available = {
+		#}
+
+		x = 3
+		y = 1
+		relative_position_id = biomass_plant_conversion
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_resource = {
+				type = tungsten
+				amount = 8
+				state = 1209
+			}
+			add_resource = {
+				type = steel
+				amount = 16
+				state = 1209
+			}
+			add_resource = {
+				type = steel
+				amount = 9
+				state = 1209
+			}
+		}
+	}
+
+	focus = {
+		id = jump_starting_factories
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { 
+	    	focus = reactivating_the_mines
+        }
+		prerequisite = { 
+	    	focus = green_house's
+        }
+		#available = {
+		#}
+
+		x = 0
+		y = 1
+		relative_position_id = reactivating_the_mines
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_technology = {
+				basic_machine_tools = 1
+			}
+			add_timed_idea = {
+				idea = jump_starting_factories
+				days = 140
+			}
+		}
+	}
+
+	focus = {
+		id = concentrated_industry_zerg
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { 
+	    	focus = reactivating_the_mines
+        }
+		prerequisite = { 
+		    focus = green_house's
+        }
+		mutually_exclusive = { focus = dispersed_industry_zerg }
+		available = {
+			NOT = {
+				has_idea = lost_mine2
+			}
+		}
+
+		x = 0
+		y = 1
+		relative_position_id = green_house's
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_technology = {
+				concentrated_industry = 1
+			}
+		}
+	}
+
+	focus = {
+		id = dispersed_industry_zerg
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { 
+	    	focus = reactivating_the_mines
+        }
+		prerequisite = { 
+		    focus = green_house's
+        }
+		mutually_exclusive = { focus = concentrated_industry_zerg }
+		available = {
+			NOT = {
+				has_idea = lost_mine2
+			}
+		}
+
+		x = -2
+		y = 1
+		relative_position_id = green_house's
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_technology = {
+				dispersed_industry = 1
+			}
+		}
+	}
+
+	focus = {
+		id = useing_resorce's
+		icon = GFX_focus_generic_tungsten
+		prerequisite = { 
+			focus = jump_starting_factories
+        }
+		#available = {
+		#}
+
+		x = 0
+		y = 1
+		relative_position_id = jump_starting_factories
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_technology = {
+				construction1 = 1
+				excavation1 = 1
+			}
+		}
+	}
+
+	focus = {
+		id = concentrated_industry_zerg2
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { 
+		    focus = concentrated_industry_zerg
+        }
+		available = {
+			NOT = {
+				has_idea = lost_mine2
+			}
+		}
+
+		x = 0
+		y = 1
+		relative_position_id = concentrated_industry_zerg
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_technology = {
+				concentrated_industry2 = 1
+			}
+		}
+	}
+
+	focus = {
+		id = dispersed_industry_zerg2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { 
+		    focus = dispersed_industry_zerg
+        }
+		available = {
+			NOT = {
+				has_idea = lost_mine2
+			}
+		}
+
+		x = 0
+		y = 1
+		relative_position_id = dispersed_industry_zerg
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_technology = {
+				dispersed_industry2 = 1
+			}
+		}
+	}
+
+	focus = {
+		id = pre_pearing_another_form_of_biomass_convertion
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { 
+		    focus = concentrated_industry_zerg2
+			focus = dispersed_industry_zerg2
+        }
+		available = {
+			NOT = {
+				has_idea = lost_mine2
+			}
+		}
+
+		x = -1
+		y = 1
+		relative_position_id = concentrated_industry_zerg2
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_technology = {
+				fuel_silos = 1
+				synth_oil_experiments = 1
+			}
+		}
+	}
+
+	focus = {
+		id = food_industry_for_the_ponys
+		icon = GFX_focus_NORDIC_com_civilian
+		prerequisite = { 
+		    focus = concentrated_industry_zerg2
+			focus = dispersed_industry_zerg2
+        }
+		prerequisite = {
+			focus = useing_resorce's
+        }
+		#available = {
+		#}
+
+		x = -3
+		y = 1
+		relative_position_id = concentrated_industry_zerg2
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			1209 = {
+				add_extra_state_shared_building_slots = 2
+			    add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			    }
+			}
+			1210 = {
+				add_extra_state_shared_building_slots = 1
+			    add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			    }
+			}
+		}
+	}
+
+	focus = {
+		id = all_are_efferts
+		icon = GFX_focus_generic_land_reclamation
+		prerequisite = { 
+		    focus = food_industry_for_the_ponys
+        }
+		prerequisite = { 
+			focus = pre_pearing_another_form_of_biomass_convertion
+        }
+		#available = {
+		#}
+
+		x = -2
+		y = 2
+		relative_position_id = concentrated_industry_zerg2
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_technology = {
+				oil_processing = 1
+			}
+			1209 = {
+				add_extra_state_shared_building_slots = 1
+			    add_building_construction = {
+				type = synthetic_refinery
+				level = 1
+				instant_build = yes
+			    }
+			}
+			1209 = {
+				add_extra_state_shared_building_slots = 1
+			    add_building_construction = {
+				type = synthetic_refinery
+				level = 1
+				instant_build = yes
+			    }
+			}
+			1210 = {
+				add_extra_state_shared_building_slots = 1
+			    add_building_construction = {
+				type = synthetic_refinery
+				level = 1
+				instant_build = yes
+			    }
+			}
+		}
+	}
+
+	#--------------------------------------------------------------
+	#the middle path
+	#--------------------------------------------------------------
+
+	focus = {
+		id = gaining_there_trust
+		icon = GFX_goal_continuous_def_against_influence
+		prerequisite = { focus = what_to_focus }
+		#available = {
+		#}
+
+		x = 0
+		y = 2
+		relative_position_id = what_to_focus
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = scared_ponies1
+				add_idea = scared_ponies2
+			}
+			swap_ideas = {
+				remove_idea = im_alone1
+				add_idea = im_alone2
+			}
+			swap_ideas = {
+				remove_idea = lost_mine1
+				add_idea = lost_mine2
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = any_others_that_are_not_informed
+		icon = GFX_goal_derpy
+		prerequisite = { focus = gaining_there_trust }
+		available = {
+			NOT = {
+				OR = {
+					has_idea = im_alone3
+					has_idea = scared_ponies3
+				}
+			}
+		}
+
+		x = 2
+		y = 1
+		relative_position_id = gaining_there_trust
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = lost_mine2
+				add_idea = lost_mine3
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = help_the_locals
+		icon = GFX_goal_derpy
+		prerequisite = { focus = any_others_that_are_not_informed }
+		#available = {
+		#}
+		mutually_exclusive = {
+			focus = focus_the_iner_circle
+		}
+
+		x = 0
+		y = 1
+		relative_position_id = any_others_that_are_not_informed
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			1209 = {
+				add_extra_state_shared_building_slots = 2
+				add_compliance = 14
+				add_resistance = -7
+			}
+			1210 = {
+				add_extra_state_shared_building_slots = 3
+				add_compliance = 13
+				add_resistance = -6
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = focus_the_iner_circle
+		icon = GFX_goal_derpy
+		prerequisite = { focus = any_others_that_are_not_informed }
+		#available = {
+		#}
+		mutually_exclusive = {
+			focus = help_the_locals
+		}
+
+		x = 2
+		y = 1
+		relative_position_id = any_others_that_are_not_informed
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			1211 = {
+				add_extra_state_shared_building_slots = 7
+			}
+			1209 = {
+				add_compliance = -6
+				add_resistance = 15
+			}
+			1210 = {
+				add_compliance = -5
+				add_resistance = 14
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = open_up_the_first_grab_and_go_stores
+		icon = GFX_goal_derpy
+		prerequisite = { 
+			focus = help_the_locals 
+			focus = focus_the_iner_circle
+		}
+		#available = {
+		#}
+
+		x = 0
+		y = 1
+		relative_position_id = help_the_locals
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			1210 = {
+				add_compliance = 3
+				add_resistance = -2
+			}
+			1209 = {
+				add_compliance = 4
+				add_resistance = -2
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = more_farms_for_are_inhabitants
+		icon = GFX_goal_derpy
+		prerequisite = {
+			focus = focus_the_iner_circle 
+			focus = help_the_locals
+		}
+		#available = {
+		#}
+
+		x = 0
+		y = 1
+		relative_position_id = focus_the_iner_circle
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			1210 = {
+				add_compliance = 5
+				add_resistance = -3
+			}
+			1209 = {
+				add_compliance = 6
+				add_resistance = -4
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = trust_in_the_overmine_trust_in_freedom
+		icon = GFX_goal_derpy
+		prerequisite = {
+			focus = open_up_the_first_grab_and_go_stores
+		}
+		prerequisite = {
+			focus = more_farms_for_are_inhabitants
+		}
+		#available = {
+		#}
+
+		x = 1
+		y = 1
+		relative_position_id = open_up_the_first_grab_and_go_stores
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			remove_ideas = lost_mine3
+			1210 = {
+				add_compliance = 30
+				add_resistance = -50
+			}
+			1209 = {
+				add_compliance = 30
+				add_resistance = -50
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = undu_the_damage_i_have_done
+		icon = GFX_focus_ARG_defense_and_democracy
+		prerequisite = { focus = gaining_there_trust }
+		available = {
+			NOT = {
+				OR = {
+					has_idea = lost_mine3
+					has_idea = scared_ponies3
+				}
+			}
+		}
+
+		x = 0
+		y = 1
+		relative_position_id = gaining_there_trust
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = im_alone2
+				add_idea = im_alone3
+			}
+			add_political_power = 50
+			if = {
+                limit = {
+                    has_idea = poverty2
+                }
+                swap_ideas = {
+                    remove_idea = poverty2
+                    add_idea = poverty4
+                }
+            }
+			if = {
+                limit = {
+                    has_idea = poverty4
+                }
+                swap_ideas = {
+                    remove_idea = poverty4
+                    add_idea = no_poverty
+                }
+            }
+            if = {
+                limit = {
+                    has_idea = poverty
+                }
+                swap_ideas = {
+                    remove_idea = poverty
+                    add_idea = poverty2
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = fixing_basic_problems_first
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = undu_the_damage_i_have_done }
+		#available = {
+		#}
+
+		x = 0
+		y = 1
+		relative_position_id = undu_the_damage_i_have_done
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 10
+			if = {
+                limit = {
+                    has_idea = poverty2
+                }
+                swap_ideas = {
+                    remove_idea = poverty2
+                    add_idea = poverty4
+                }
+            }
+			if = {
+                limit = {
+                    has_idea = poverty4
+                }
+                swap_ideas = {
+                    remove_idea = poverty4
+                    add_idea = no_poverty
+                }
+            }
+            if = {
+                limit = {
+                    has_idea = poverty
+                }
+                swap_ideas = {
+                    remove_idea = poverty
+                    add_idea = poverty2
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = useing_are_new_resorce's
+		icon = GFX_goal_continuous_non_factory_construct
+		prerequisite = { focus = fixing_basic_problems_first }
+		#available = {
+		#}
+
+		x = 0
+		y = 1
+		relative_position_id = fixing_basic_problems_first
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 10
+			add_resource = {
+				type = steel
+				amount = 20
+				state = 1209
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = are_teaching_situation
+		icon = GFX_focus_research
+		prerequisite = { 
+			focus = useing_are_new_resorce's
+		}
+		#available = {
+		#}
+
+		x = 0
+		y = 1
+		relative_position_id = useing_are_new_resorce's
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			remove_ideas = im_alone3
+
+			add_political_power = 100
+			swap_ideas = {
+				remove_idea = poor_science_base
+				add_idea = better_science_base
+			}
+			add_research_slot = 1
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = request_crystal_empire's_help
+		icon = GFX_goal_derpy
+		prerequisite = { focus = gaining_there_trust }
+		available = {
+			NOT = {
+				OR = {
+					has_idea = im_alone3
+					has_idea = lost_mine3
+				}
+			}
+		}
+
+		x = -2
+		y = 1
+		relative_position_id = gaining_there_trust
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = scared_ponies2
+				add_idea = scared_ponies3
+			}
+			CRY = {
+				add_opinion_modifier = {
+					modifier = asking_for_help_first
+					target = root
+				}
+				reverse_add_opinion_modifier = {
+					modifier = asking_for_help_first
+					target = root
+				}
+			}
+			1209 = {
+				add_compliance = 10
+				add_resistance = -2
+			}
+			1210 = {
+				add_compliance = 12
+				add_resistance = -3
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = examin_the_situation
+		icon = GFX_goal_derpy
+		prerequisite = { focus = request_crystal_empire's_help }
+		#available = {
+		#}
+
+		x =-2
+		y = 1
+		relative_position_id = request_crystal_empire's_help
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 80
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = rapid_response_force
+		icon = GFX_goal_derpy
+		prerequisite = { focus = examin_the_situation }
+		#available = {
+		#}
+
+		x = 0
+		y = 1
+		relative_position_id = examin_the_situation
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			1210 = {
+				add_compliance = 1
+				add_resistance = -20
+			}
+			1209 = {
+				add_compliance = 2
+				add_resistance = -20
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = every_thing_is_starting_to_look_better
+		icon = GFX_goal_derpy
+		prerequisite = { 
+			focus = rapid_response_force 
+		}
+		prerequisite = { 
+			focus = learning_the_continet
+		}
+		#available = {
+		#}
+
+		x = 1
+		y = 1
+		relative_position_id = rapid_response_force
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			remove_ideas = scared_ponies3
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = stock_piling_food
+		icon = GFX_goal_derpy
+		prerequisite = { focus = request_crystal_empire's_help }
+		#available = {
+		#}
+
+		x = 0
+		y = 1
+		relative_position_id = request_crystal_empire's_help
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+                limit = {
+                    has_idea = poverty2
+                }
+                swap_ideas = {
+                    remove_idea = poverty2
+                    add_idea = poverty4
+                }
+            }
+			if = {
+                limit = {
+                    has_idea = poverty4
+                }
+                swap_ideas = {
+                    remove_idea = poverty4
+                    add_idea = no_poverty
+                }
+            }
+            if = {
+                limit = {
+                    has_idea = poverty
+                }
+                swap_ideas = {
+                    remove_idea = poverty
+                    add_idea = poverty2
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = learning_the_continet
+		icon = GFX_goal_derpy
+		prerequisite = { focus = stock_piling_food }
+		#available = {
+		#}
+
+		x = 0
+		y = 1
+		relative_position_id = stock_piling_food
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = unknowen_location1
+				add_idea = unknowen_location2
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = now_time_to_focus_on_other_matters
+		icon = GFX_goal_derpy
+		prerequisite = {
+			focus = trust_in_the_overmine_trust_in_freedom
+		}
+		#available = {
+		#}
+
+		x = -1
+		y = 1
+		relative_position_id = trust_in_the_overmine_trust_in_freedom
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_state_core = 1209
+			swap_ideas = {
+				remove_idea = pre_industrial_society
+				add_idea = outdated_industry
+			}
+			swap_ideas = {
+				remove_idea = better_science_base
+				add_idea = big_science_base
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = the_ponies_are_our_friends
+		icon = GFX_goal_derpy
+		prerequisite = {
+			focus = every_thing_is_starting_to_look_better 
+		}
+		#available = {
+		#}
+
+		x = 1
+		y = 1
+		relative_position_id = every_thing_is_starting_to_look_better
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_state_core = 1210
+				remove_ideas = unknowen_location2
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = i_have_hered_of_a_monarch_named_celestia
+		icon = GFX_goal_derpy
+		prerequisite = {
+			focus = are_teaching_situation
+		}
+		prerequisite = {
+			focus = now_time_to_focus_on_other_matters
+		}
+		prerequisite = {
+			focus = the_ponies_are_our_friends
+		}
+		#available = {
+		#}
+
+		x = 0
+		y = 2
+		relative_position_id = are_teaching_situation
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+}
+	

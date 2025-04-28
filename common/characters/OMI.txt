@@ -1,0 +1,45 @@
+characters={
+	OMI_harmonist_overmine = {
+		name = "overmine"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_OMI_overmine_large"
+				small = "GFX_portrait_OMI_overmine_small"
+			}
+		}
+		country_leader = {
+			expire = "1965.1.1"
+			ideology = overmine_harmonist
+			traits = { 
+				accepting_harmonist
+			}
+			id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			allowed = {
+				tag = OMI
+			}
+			cost = 100
+			traits = {
+				one_mine
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	OMI_fascist_overmine = {
+		name = "overmine"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_OMI_overmine_large"
+			}
+		}
+		country_leader = {
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			id = -1
+		}
+	}
+}

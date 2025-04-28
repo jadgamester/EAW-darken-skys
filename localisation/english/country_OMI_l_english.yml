@@ -1,0 +1,95 @@
+﻿l_english:
+
+### COUNTRYNAME ###
+OMI:0 "overmine"
+OMI_DEF:0 "overmine"
+OMI_neutrality:0 "broken_swarm"
+OMI_neutrality_DEF:0 "overmine"
+OMI_fascism:0 "overmine"
+OMI_fascism_DEF:0 "greating"
+OMI_communism:0 "overmine"
+OMI_communism_DEF:0 "overmine"
+OMI_democratic:0 "overmine"
+OMI_democratic_DEF:0 "overmine"
+
+
+### PARTIES ###
+OMI_neutrality_party:0 "broken_swarm"
+OMI_neutrality_party_long:0 "overmine"
+OMI_communism_party:0 "overmine"
+OMI_communism_party_long:0 "overmine"
+OMI_democratic_party:0 "overmine"
+OMI_democratic_party_long:0 "harmonist_overmine"
+OMI_fascism_party:0 "overmine"
+OMI_fascism_party_long:0 "supremacy_overmine"
+
+
+### FOCUS ### 
+
+### starting focus tree ###
+
+
+whos_there:0 "whos there"
+whos_there_desc:0 "with little i can see these "ponys" seem to be scared of me i will keep a drone on watch for now"
+where_am_i:0 "where am i"
+where_am_i_desc:0 "this is not the laval planet i remember from what little memorize i have"
+what_am_i:0 "what am i"
+what_am_i_desc:0 "with the memories i have and the time i whent through them i seem to be an acaint race nown as the zerg... but from what i can tell im nothing like it through the memories as i should have only one mined not shareing it what happen?"
+i_see_through_them:0 "i see through them"
+i_see_through_them_desc:0 "these creaturs that surrond me not the ones that call them selfs ponys but the others... they seem loyal to me and... i share there minds?"
+i_am_them:0 "i am them"
+i_am_them_desc:0 "with little experimentation i have discovered i can control these zergs will and body all must as if it where my own..."
+contact_how:0 "contact how"
+contact_how_desc:0 "telapathic talking? well now language barriers will be no problem for me... but who do i talk to"
+essense_for_evolution:0 "essens for evolution"
+essense_for_evolution_desc:0 "if i can get any drone or queen to consume another creature then i can make more of them but... it seems i will have difficulties"
+
+
+
+### HARMONIST FOCUS TREE ###
+
+
+my_mine_is_chained:0 "my mined is chained"
+my_mine_is_chained_desc:0 "i feal a presence in my mined other then mine its week now but i feal it searching i dont have long"
+im_not_alone_in_this_new_world:0 "im not alone in this new world"
+im_not_alone_in_this_new_world_desc:0 "there is others here there afrad of me but not of what i am as they have not seen me i must not be seen so soon but how to not to scare them more"
+
+
+
+
+
+### IDEAS ###
+useing_the_fallen:0 "useing the fallen"
+useing_the_fallen_desc:0 "after the yak civil war they have greanted there fallen to use for are work for are particapation though convincing them was not easy"
+
+### DECISIONS ###
+
+
+### EVENTS ###
+overmine.t.1:0 "opportunities or are failiure "
+overmine.d.1:0 "this is not gonna be easy we are mostly free from amon but not completly we must act fast befor amon realise's we are not dead"
+overmine.1.a:0 "everything to ensure victory"
+overmine.1.b:0 "focus amon but not are main goal"
+overmine.1.c:0 "amon can wait we have other work to do"
+overmine_news.t.1:0 "we did it after hard work withen the hive cortex we have push amon out for good... but there is still much to be done"
+overmine_news.d.1:0 ""
+overmine_news.1.a:0 " for the first time, we are free"
+overmine_news.d.2:0 "we have lost"
+overmine_news.t.2:0 "and its all over"
+
+
+### ADVISORS ###
+
+
+
+#bookmark
+overmine_history:0 "dering the battle of char the overmines home planet when the protoss named tassadar sacrifice his life to kill the overmine how even when amon tryed to weeken the blow with a just forment hybrid what happen was the overmine got transported via teleportation rathen then destryed now amon is trying to find his lost tool "
+
+#other
+overmine_harmonist:0 "overmine harmonist"
+overmine_harmonist_desc:0 "it has been many many years sence i last had freedom once im no longer under threat of loseing said freedom i will seek to help this world in any way i can"
+
+overmine_supremacy:0 "overmine supremacy"
+overmine_supremacy_desc:0 "greating"
+
+broken_swarm_desc:0 "the overmine did his best but he had one last trick amon only has control on the overmine.... not the rest of the swarm overmine did what he had to do"

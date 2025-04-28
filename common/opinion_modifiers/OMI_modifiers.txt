@@ -1,0 +1,3 @@
+opinion_modifiers = {
+	asking_for_help_first = { value = 48 }
+}

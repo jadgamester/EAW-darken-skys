@@ -1,0 +1,42 @@
+spritetypes = {
+	spritetype = {
+		name = "GFX_idea_useing_the_fallen"
+		texturefile = "gfx/interface/ideas/OMI/useing_the_fallen.dds"
+	}
+	spritetype = {
+		name = "GFX_idea_snow_clearing"
+		texturefile = "gfx/interface/ideas/OMI/snow_clearing.dds"
+	}
+	spritetype = {
+		name = "GFX_idea_growing_plants"
+		texturefile = "gfx/interface/ideas/OMI/growing_plants.dds"
+	}
+	spritetype = {
+		name = "GFX_idea_green_houses"
+		texturefile = "gfx/interface/ideas/OMI/green_houses.dds"
+	}
+	spritetype = {
+		name = "GFX_idea_extra_planing"
+		texturefile = "gfx/interface/ideas/OMI/extra_planing.dds"
+	}
+	spritetype = {
+		name = "GFX_idea_plant_harvesting"
+		texturefile = "gfx/interface/ideas/OMI/plant_harvesting.dds"
+	}
+	spritetype = {
+		name = "GFX_idea_searching"
+		texturefile = "gfx/interface/ideas/OMI/searching.dds"
+	}
+	spritetype = {
+		name = "GFX_idea_unknowen_location"
+		texturefile = "gfx/interface/ideas/OMI/unknowen_location.dds"
+	}
+	spritetype = {
+		name = "GFX_idea_unknowen_location2"
+		texturefile = "gfx/interface/ideas/OMI/unknowen_location2.dds"
+	}
+	spritetype = {
+		name = "GFX_idea_unknowen_location3"
+		texturefile = "gfx/interface/ideas/OMI/unknowen_location3.dds"
+	}
+}

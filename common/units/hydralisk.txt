@@ -1,0 +1,36 @@
+sub_units = {
+
+	hydralisk = {
+		sprite = hydralisk
+		map_icon_category = infantry
+		active = yes
+
+		type = { infantry }
+
+		group = medium_zerg
+
+		categories = {
+			category_front_line
+			category_all_infantry
+			category_army
+			category_heavy_infantry
+		}
+
+		combat_width = 1.5
+
+		max_organisation = 50
+		max_strength = 25
+		default_morale = 0.4
+		manpower = 250
+
+		maximum_speed = 0.4
+		training_time = 50
+		weight = 0.2
+
+		supply_consumption = 0.7
+
+		need = {
+			biomass_medium = 125
+		}
+	}
+}

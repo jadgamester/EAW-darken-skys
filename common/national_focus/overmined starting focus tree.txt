@@ -1,0 +1,316 @@
+focus_tree = {
+	id = overmine_starting_trees
+	default = no
+    country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = OMI
+		}
+	}
+
+	continuous_focus_position = { x = 70 y = 1500 }
+	focus = {
+		id = where_am_i
+		icon = GFX_focus_generic_home_defense
+		#prerequisite = {}
+		#available = {
+		#}
+
+		x = 6
+		y = 1
+
+		cost = 2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 15
+			add_ideas = { unknowen_location1 }
+		}
+
+		search_filters = { army }
+	}
+
+	focus = {
+		id = this_is_not_zerus
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = where_am_i }
+		#available = {
+		#}
+
+		x = 7
+		y = 2
+
+		cost = 2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		   add_political_power = -10
+		}
+
+		search_filters = { army }
+	}
+
+	focus = {
+		id = creatures_that_i_control
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = where_am_i }
+		#available = {
+		#}
+
+		x = 5
+		y = 2
+
+		cost = 2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = biomass_normal
+				amount = 50
+				producer = OMI
+			}
+			add_stability = 0.1
+		}
+
+		search_filters = { army }
+	}
+
+	focus = {
+		id = whos_there
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = this_is_not_zerus }
+		prerequisite = { focus = where_am_i }
+		prerequisite = { focus = creatures_that_i_control }
+		#available = {
+		#}
+
+		x = 0
+		y = 2
+		relative_position_id = where_am_i
+
+		cost = 2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = -0.50
+			add_war_support = -0.80
+			add_ideas = lost_mine1
+		}
+
+		search_filters = { army }
+	}
+
+	focus = {
+		id = unfilmilier_creaturs
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = { focus = whos_there }
+		#available = {
+		#}
+
+		x = 1
+		y = 1
+		relative_position_id = whos_there
+
+		cost = 2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = { scared_ponies1 }
+			army_experience = 20
+		}
+
+		search_filters = { army }
+	}
+
+	focus = {
+		id = essense_for_survival
+		icon = GFX_focus_generic_industry_1
+		prerequisite = { focus = whos_there}
+		#available = {
+		#}
+
+		x = -1
+		y = 1
+		relative_position_id = whos_there
+
+		cost = 2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = biomass_normal
+				amount = 200
+				producer = OMI
+			}
+		}
+
+		search_filters = { army }
+	}
+
+	focus = {
+		id = what_am_i
+		icon = GFX_focus_RAJ_indian_gentlemen_offcers
+		prerequisite = { focus = whos_there }
+		prerequisite = { focus = unfilmilier_creaturs }
+		prerequisite = { focus = essense_for_survival }
+		#available = {
+		#}
+
+		x = 0
+		y = 2
+		relative_position_id = whos_there
+
+		cost = 2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = im_alone1
+			add_political_power = -100
+			add_manpower = 865
+		}
+
+		search_filters = { army }
+	}
+    #--------------------------------------------------------------
+	# the hamroist path
+    #--------------------------------------------------------------
+	focus = {
+		id = my_mine_is_chained
+		icon = GFX_focus_RAJ_indianisation_of_army
+		prerequisite = { focus = what_am_i }
+		mutually_exclusive = { focus = i_am_alone? focus = impreace_the_chains }
+		#available = {
+		#}
+
+		x = 2
+		y = 2
+		relative_position_id = what_am_i
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = overmine.1
+			create_field_marshal ={
+				name = "overmine"
+				picture = GFX_portrait_OMI_overmine_large
+				traits = { 
+					brilliant_strategist
+					inflexible_strategist
+					logistics_wizard
+					adaptable
+				}
+			    skill = 6
+			    attack_skill = 7
+			   defense_skill = 4
+			   planning_skill = 3
+			   logistics_skill = 4
+			}
+			modify_building_resources = {
+            building = industrial_complex
+            resource = steel
+            amount = 1
+			}
+			add_manpower = 800
+			load_focus_tree = overmine_harmonist
+		}
+		search_filters = { industrial }
+	}
+    #--------------------------------------------------------------
+	# the non-aligned path
+    #--------------------------------------------------------------
+	focus = {
+		id = i_am_alone?
+		icon = GFX_goal_generic_occupy_states_coastal
+		prerequisite = { focus = what_am_i }
+		mutually_exclusive = { focus = impreace_the_chains focus = my_mine_is_chained }
+		#available = {
+		#}
+
+		x = 0
+		y = 2
+		relative_position_id = what_am_i
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_field_marshal ={
+				name = "overmine"
+				picture = GFX_portrait_OMI_overmine_large
+				traits = { 
+					brilliant_strategist
+					inflexible_strategist
+					logistics_wizard
+					adaptable
+				}
+			    skill = 5
+			    attack_skill = 6
+			   defense_skill = 3
+			   planning_skill = 3
+			   logistics_skill = 3
+			}
+			1209 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_manpower = 800
+		}
+		search_filters = { industrial }
+	}
+    #--------------------------------------------------------------
+	#the supremacist path
+    #--------------------------------------------------------------
+	focus = {
+		id = impreace_the_chains
+		icon = GFX_focus_rom_handle_king
+		prerequisite = { focus = what_am_i }
+		mutually_exclusive = { focus = i_am_alone? focus = my_mine_is_chained }
+		#available = {
+		#}
+
+		x = -2
+		y = 2
+		relative_position_id = what_am_i
+
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_field_marshal ={
+				name = "overmine"
+				picture = GFX_portrait_OMI_overmine_large
+				traits = { 
+					brilliant_strategist
+					inflexible_strategist
+					logistics_wizard
+					offensive_doctrine
+					adaptable
+				}
+			    skill = 7
+			    attack_skill = 8
+			   defense_skill = 4
+			   planning_skill = 4
+			   logistics_skill = 5
+			}
+			add_manpower = 800
+		}
+		search_filters = { industrial }
+	}
+}

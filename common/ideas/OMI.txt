@@ -1,0 +1,312 @@
+ideas = {
+
+	country = {
+		useing_the_fallen = {
+			picture = useing_the_fallen
+
+			allowed = {
+				tag = OMI
+			}
+	
+			modifier = {
+				weekly_manpower = 300
+			}
+		}
+		extra_planing = {
+			picture = extra_planing
+
+			allowed = {
+				tag = OMI
+			}
+			targeted_modifier = {
+				tag = JAK
+				attack_bonus_against = 0.2
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = YAK
+				attack_bonus_against = 0.2
+				defense_bonus_against = 0.15
+			}
+		}
+		biomass_conversion = {
+			picture = biomass_conversion
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.10
+			}
+		}
+		snow_clearing = {
+			picture = snow_clearing
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				consumer_goods_factor = 0.08
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = growing_plants
+					days = 50
+				}
+			}
+		}
+		growing_plants = {
+			picture = growing_plants
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				consumer_goods_factor = 0.14
+			}
+			on_remove = {
+				add_ideas = { extra_plants }
+				1209 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+					}
+				}
+			}
+		}
+		extra_plants = {
+			picture = green_houses
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				consumer_goods_factor = -0.09
+			}
+		}
+		harvesting_plants = {
+			picture = extra_plants
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				consumer_goods_factor = -0.09
+			}
+		}
+		jump_starting_factories = {
+			picture = extra_plants
+
+			on_remove = {
+				add_ideas = { running_factories }
+			}
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.10
+			}
+		}
+		running_factories = {
+			picture = extra_plants
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				consumer_goods_factor = -0.20
+				production_factory_efficiency_gain_factor = 0.20
+				production_factory_max_efficiency_factor = 0.30
+			}
+		}
+		
+		lost_mine1 = {
+			picture = extra_planing
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.50
+				production_factory_max_efficiency_factor = -0.50
+				consumer_goods_factor = 0.80
+				research_speed_factor = -0.30
+				army_attack_factor = -0.50
+				army_defence_factor = -0.50
+				max_dig_in_factor = -0.50
+			}
+		}
+		lost_mine2 = {
+			picture = extra_planing
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.40
+				production_factory_max_efficiency_factor = -0.40
+				consumer_goods_factor = 0.70
+				research_speed_factor = -0.25
+				army_attack_factor = -0.40
+				army_defence_factor = -0.40
+				max_dig_in_factor = -0.40
+			}
+		}
+		lost_mine3 = {
+			picture = extra_planing
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.20
+				production_factory_max_efficiency_factor = -0.20
+				consumer_goods_factor = 0.30
+				research_speed_factor = -0.15
+				army_attack_factor = -0.15
+				army_defence_factor = -0.15
+				max_dig_in_factor = -0.15
+			}
+		}
+		scared_ponies1 = {
+			picture = extra_planing
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				resistance_target = 0.60
+				conscription_factor = -0.80
+				conscription = -0.10
+				mobilization_speed = -0.70
+				local_manpower = -0.40
+			}
+		}
+		scared_ponies2 = {
+			picture = extra_planing
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				resistance_target = 0.50
+				conscription_factor = -0.70
+				conscription = -0.07
+				mobilization_speed = -0.70
+				local_manpower = -0.30
+			}
+		}
+		scared_ponies3 = {
+			picture = extra_planing
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				resistance_target = 0.30
+				conscription_factor = -0.40
+				conscription = -0.2
+				mobilization_speed = -0.50
+				local_manpower = -0.20
+			}
+		}
+		unknowen_location1 = {
+			picture = unknowen_location
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				navy_intel_factor = -1
+				army_intel_factor = -1
+				airforce_intel_factor = -1
+				civilian_intel_factor = -1
+				navy_intel_to_others = -100
+				army_intel_to_others = -100
+				airforce_intel_to_others = -100
+				civilian_intel_to_others = -100
+			}
+		}
+		unknowen_location2 = {
+			picture = unknowen_location2
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				navy_intel_factor = -0.5
+				army_intel_factor = -0.5
+				airforce_intel_factor = -0.5
+				civilian_intel_factor = -0.5
+				navy_intel_to_others = -50
+				army_intel_to_others = -50
+				airforce_intel_to_others = -50
+				civilian_intel_to_others = -50
+			}
+		}
+
+		unknowen_location3 = {
+			picture = unknowen_location3
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				political_power_factor = 0.1
+			}
+		}
+
+		im_alone1 = {
+			picture = extra_planing
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				political_power_factor = -0.60
+				war_support_factor = -0.20
+				stability_factor = -0.35
+			}
+		}
+		im_alone2 = {
+			picture = extra_planing
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				political_power_factor = -0.30
+				war_support_factor = -0.10
+				stability_factor = -0.15
+			}
+		}
+		im_alone3 = {
+			picture = extra_planing
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				political_power_factor = -0.15
+				war_support_factor = -0.05
+				stability_factor = -0.06
+			}
+		}
+		searching_up_north = {
+			picture = searching
+
+			allowed = {
+				tag = OMI
+			}
+			modifier = {
+				political_power_factor = -0.10
+			}
+		}
+		
+	}
+}

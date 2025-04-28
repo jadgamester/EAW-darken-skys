@@ -1,0 +1,37 @@
+add_namespace = overmine
+
+country_event = { # overmine struggle against amones control
+	id = overmine.1
+	title = overmine.t.1
+	desc = overmine.d.1
+
+	is_triggered_only = yes
+
+	option = {
+		name = overmine.1.a
+		set_power_balance = {
+			id = OMI_power_balance
+			left_side = OMI_amons_side
+			right_side = OMI_overmines_side
+			set_value = 0.3
+		}
+	}
+	option = {
+		name = overmine.1.b
+		set_power_balance = {
+			id = OMI_power_balance
+			left_side = OMI_amons_side
+			right_side = OMI_overmines_side
+			set_value = 0.0
+		}
+	}
+	option = {
+		name = overmine.1.c
+		set_power_balance = {
+			id = OMI_power_balance
+			left_side = OMI_amons_side
+			right_side = OMI_overmines_side
+			set_value = -0.3
+		}
+	}
+}

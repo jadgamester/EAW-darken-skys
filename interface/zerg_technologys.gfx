@@ -1,0 +1,54 @@
+spriteTypes = {
+
+	SpriteType = {
+		name = "GFX_zerg_techtree_bg"
+		textureFile = "gfx/interface/techtree/changeling_techtree_bg.dds"
+	}
+	SpriteType = {
+		name = "GFX_zerg_background"
+		texturefile = "gfx/interface/techtree/zerg_background.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_technology_zerg_folder_unavailable_item_bg"
+		textureFile = "gfx/interface/techtree/tech_doctrine_unavailable_item_bg.dds"
+	}
+	SpriteType = {
+		name = "GFX_technology_zerg_folder_available_item_bg"
+		textureFile = "gfx/interface/techtree/tech_doctrine_available_item_bg.dds"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_zerg_folder_currently_researching_item_bg"
+		texturefile = "gfx/interface/techtree/tech_doctrine_researching_anim_strip.dds"
+		noOfFrames = 9
+		loadType = "INGAME"
+		transparencecheck = yes
+		animation_rate_fps = 15
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	SpriteType = {
+		name = "GFX_technology_zerg_folder_researched_item_bg"
+		textureFile = "gfx/interface/techtree/tech_doctrine_researched_item_bg.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_tech_biomass_normal_medium"
+		texturefile = "gfx/interface/technologies/infantry/r56_tech_FIN_infantry_at_01.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_tech_biomass_medium_medium"
+		texturefile = "gfx/interface/technologies/infantry/r56_tech_FIN_infantry_at_01.dds"
+	}
+	spriteType = {
+		name = "GFX_biomass_heavy_tech_medium"
+		texturefile = "gfx/interface/technologies/infantry/r56_tech_FIN_infantry_at_01.dds"
+	}
+	spriteType = {
+		name = "GFX_tech_hatcheries_medium"
+		texturefile = "gfx/interface/technologies/infantry/r56_tech_FIN_infantry_at_01.dds"
+	}
+
+}

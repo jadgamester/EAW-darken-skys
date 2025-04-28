@@ -1,0 +1,10 @@
+objectTypes = {
+	pdxmesh = {
+		name = "overmine_mesh"
+		file = "gfx/models/overmine/mesh_overmine.mesh"
+
+		animation = { id = "idle"    type = "overmine_idle" }
+
+		scale = 0.4
+	}
+}

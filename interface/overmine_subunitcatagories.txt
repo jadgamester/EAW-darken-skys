@@ -1,0 +1,8 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_unit_category_zerg_units"
+		texturefile = "gfx/interface/category_zerg_units.dds"
+		legacy_lazy_load = no
+	}
+}

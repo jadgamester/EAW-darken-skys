@@ -1,0 +1,23 @@
+add_namespace = overmine_news
+news_event = { #overmine won against amon
+	id = overmine_news.1
+	title = overmine_news.t.1
+	desc = overmine_news.d.1
+
+	is_triggered_only = yes
+
+	option = {
+		name = overmine_news.1.a
+	}
+}
+news_event = { #overmine lost against amon
+	id = overmine_news.2
+	title = overmine_news.t.2
+	desc = overmine_news.d.2
+
+	is_triggered_only = yes
+
+	option = {
+		name = overmine_news.2.a
+	}
+}

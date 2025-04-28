@@ -1,0 +1,6 @@
+entity = {
+	name = "ultralisk_entity"
+	pdxmesh = "ultralisk_mesh"
+
+	state = { name = "idle"     animation = "idle" }     
+}

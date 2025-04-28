@@ -1,0 +1,2 @@
+tag = { OMI }
+remove_country_flag = OMI_destroyed_mined

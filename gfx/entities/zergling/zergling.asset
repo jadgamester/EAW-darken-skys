@@ -1,0 +1,6 @@
+entity = {
+	name = "zerglings_entity"
+	pdxmesh = "zergling_mesh"
+
+	state = { name = "idle"     animation = "idle" }     
+}

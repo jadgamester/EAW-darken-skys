@@ -1,0 +1,4 @@
+animation = {
+	name = "ultralisk_idle_animation"
+	file = "ultralisk_idle.anim"
+}

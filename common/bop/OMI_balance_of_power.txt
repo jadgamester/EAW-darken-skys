@@ -1,0 +1,144 @@
+
+OMI_power_balance = {
+	initial_value = 0.25
+	left_side = OMI_amons_side
+	right_side = OMI_overmines_side
+	decision_category = OMI_balance_of_power_category
+	range = {
+		id = OMI_balance_range
+		min = -0.10
+		max = 0.10
+		modifier = {
+			war_support_weekly = 0.5
+		}
+	}
+	side = {
+		id = OMI_amons_side
+		icon = GFX_idea_generic_agrarian_society
+		range = {
+			id = OMI_amon_victory
+			min = -1
+			max = -0.9
+			on_activate = {
+					OMI = { country_event = overmine_news.1 }
+				load_focus_tree = overmine_supremacist_focus_tree
+			}
+		}
+		range = {
+			id = OMI_amon_total_control
+			min = -0.9
+			max = -0.7
+			modifier = {
+				political_power_factor = 0.60
+			}
+		}
+		range = {
+			id = OMI_amon_high_control_range
+			min = -0.7
+			max = -0.5
+			modifier = {
+				political_power_factor = -0.50
+			}
+			on_activate = {
+				add_stability = -0.20
+			}
+			on_deactivate = {
+				add_stability = 0.20
+			}
+		}
+		range = {
+			id = OMI_amon_medion_control_range
+			min = -0.5
+			max = -0.3
+			modifier = {
+				political_power_factor = -0.20
+			}
+			on_activate = {
+				add_stability = -0.10
+			}
+			on_deactivate = {
+				add_stability = 0.10
+			}
+		}
+		range = {
+			id = OMI_amon_low_control_range
+			min = -0.3
+			max = -0.1
+			modifier = {
+				political_power_factor = -0.10
+			}
+			on_activate = {
+				add_stability = -0.05
+			}
+			on_deactivate = {
+				add_stability = 0.05
+			}
+		}
+	}
+	side = {
+		id = OMI_overmines_side
+		icon = GFX_idea_generic_degauss_ship_hulls
+		range = {
+			id = OMI_overmine_low_control_range
+			min = 0.1
+			max = 0.3
+			modifier = {
+				political_power_factor = 0.10
+			}
+			on_activate = {
+				add_stability = 0.05
+			}
+			on_deactivate = {
+				add_stability = -0.05
+			}
+		}
+		range = {
+			id = OMI_overmine_medium_control_range
+			min = 0.3
+			max = 0.5
+			modifier = {
+				political_power_factor = 0.30
+			}
+			on_activate = {
+				add_stability = 0.10
+			}
+			on_deactivate = {
+				add_stability = -0.10
+			}
+		}
+		range = {
+			id = OMI_overmine_high_control_range
+			min = 0.5
+			max = 0.7
+			modifier = {
+				political_power_factor = 0.40
+			}
+			on_activate = {
+				add_stability = 0.20
+			}
+			on_deactivate = {
+				add_stability = -0.20
+			}
+		}
+		range = {
+			id = OMI_overmine_total_control
+			min = 0.7
+			max = 0.9
+			modifier = {
+				political_power_factor = 0.50
+			}
+		}
+		range = {
+			id = OMI_overmine_victory
+			min = 0.9
+			max = 1
+			on_activate = {
+					OMI = { news_event = overmine_news.1 }
+				remove_power_balance = {
+					id = OMI_power_balance
+				}
+			}
+		}
+	}
+}
+

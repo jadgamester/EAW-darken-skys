@@ -1,0 +1,38 @@
+equipments = {
+	biomass_heavy_arch = {
+
+		is_archetype = yes
+		picture = biomass_heavy
+		is_buildable = no
+		type = {
+			infantry
+		}
+		group_by = archetype
+
+		maximum_speed = 8
+		reliability = 1
+
+		defense = 120
+		breakthrough = 97
+		hardness = 1
+
+		soft_attack = 124
+		hard_attack = 74
+
+		lend_lease_cost = 67
+
+		build_cost_ic = 4.6
+		resources = {
+			steel = 5
+			tungsten = 8
+			oil = 3
+		}
+	}
+
+	biomass_heavy = {
+
+		archetype = biomass_heavy_arch
+		picture = heavy_biomass_eqp
+		is_buildable = yes
+	}
+}

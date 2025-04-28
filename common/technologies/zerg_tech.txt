@@ -1,0 +1,538 @@
+technologies = {
+   zerg_race = {
+		research_cost = 1
+
+		allow = {
+			always = no
+		}
+
+	}
+
+    tech_biomass_normal = {
+        dependencies = {
+			zerg_race = 1
+		}
+
+        allow = {
+            always = yes
+        }
+
+        folder = {
+			name = zerg_folder
+			position = { x = 0 y = 5 }
+		}
+
+        enable_equipments = {
+            biomass_normal
+            biomass_normal_arch
+        }
+
+        path = {
+            leads_to_tech = tech_drones
+            research_cost_coeff = 1
+        }
+
+        path = {
+            leads_to_tech = tech_biomass_medium
+            research_cost_coeff = 1
+        }
+    }
+
+    tech_drones = {
+
+        dependencies = {
+			zerg_race = 1
+		}
+
+        allow = {
+            always = yes
+        }
+
+        folder = {
+			name = zerg_folder
+			position = { x = 3 y = 5 }
+		}
+
+        enable_subunits = {
+            drones
+        }
+
+        research_cost = 1
+        start_year = 1007
+
+        path = {
+            leads_to_tech = tech_creep_colonys
+            research_cost_coeff = 1
+        }
+
+        categories = {
+            zerg_tech
+            race_tech
+        }
+        on_research_complete = {
+            on_research_complete = {
+                if = {
+                    limit = {
+		    		has_zerg_race_tech = yes
+		    		    NOT = {
+		    			    has_template_containing_unit = drones
+		    		    }
+		    		}
+		    		hidden_effect = {
+		    			division_template = {
+			    			name = "drones offence"
+			    		
+			    			regiments = {
+				    			drones = { x = 0 y = 0 }
+				    			drones = { x = 1 y = 0 }
+				    		}
+					    	priority = 2
+					    }
+                       #fix_weapon_techs = yes
+				    }
+                }
+            }
+        }
+    }
+
+    tech_creep_colonys = {
+
+        dependencies = {
+			zerg_race = 1
+		}
+
+        allow = {
+            always = yes
+        }
+
+        folder = {
+			name = zerg_folder
+			position = { x = 5 y = 5 }
+		}
+
+        #enable_subunits = {
+        #    drones
+        #}
+
+        enable_equipments = {
+            creep_colonys
+            creep_colonys_arch
+        }
+
+        research_cost = 1
+        start_year = 1007
+
+        path = {
+            leads_to_tech = tech_zerglings
+            research_cost_coeff = 1
+        }
+
+        categories = {
+            zerg_tech
+            race_tech
+        }
+        #on_research_complete = {
+        #    if = {
+		#		limit = {
+		#			has_zerg_race_tech = yes
+		#			NOT = {
+		#				has_template_containing_unit = drones
+		#			}
+		#		}
+		#		hidden_effect = {
+		#			division_template = {
+		#				name = "drones offence"
+		#			
+		#				regiments = {
+		#					drones = { x = 0 y = 0 }
+		#					drones = { x = 1 y = 0 }
+		#				}
+		#				priority = 2
+		#			}
+        #           fix_weapon_techs = yes
+		#		}
+        #   }
+        #}
+       
+        
+    }
+
+    tech_zerglings = {
+
+        dependencies = {
+			zerg_race = 1
+		}
+
+        allow = {
+            always = yes
+        }
+
+        folder = {
+			name = zerg_folder
+			position = { x = 6 y = 5 }
+		}
+
+        enable_subunits = {
+            zerglings
+        }
+
+        research_cost = 1
+        start_year = 1007
+
+        path = {
+            leads_to_tech = tech_hydralisks
+            research_cost_coeff = 1
+        }
+
+        categories = {
+            zerg_tech
+            race_tech
+        }
+        on_research_complete = {
+            if = {
+				limit = {
+					has_zerg_race_tech = yes
+					NOT = {
+						has_template_containing_unit = zerglings
+					}
+				}
+				hidden_effect = {
+					division_template = {
+						name = "zergling offence"
+					
+						regiments = {
+							zerglings = { x = 0 y = 0 }
+							zerglings = { x = 1 y = 0 }
+						}
+						priority = 2
+					}
+                    fix_weapon_techs = yes
+				}
+            }
+        }
+    }
+
+    tech_hydralisks = {
+
+        dependencies = {
+			zerg_race = 1
+		}
+
+        allow = {
+            always = yes
+        }
+
+        folder = {
+			name = zerg_folder
+			position = { x = 8 y = 5 }
+		}
+
+        enable_subunits = {
+            hydralisk
+        }
+
+        research_cost = 1
+        start_year = 1007
+
+        categories = {
+            zerg_tech
+            race_tech
+        }
+        on_research_complete = {
+            if = {
+				limit = {
+					has_zerg_race_tech = yes
+					NOT = {
+						has_template_containing_unit = hydralisk
+					}
+				}
+				hidden_effect = {
+					division_template = {
+						name = "hydralisk offence"
+					
+						regiments = {
+							hydralisk = { x = 0 y = 0 }
+							hydralisk = { x = 1 y = 0 }
+						}
+						priority = 2
+					}
+                    fix_weapon_techs = yes
+				}
+            }
+        }
+       
+        
+    }
+
+   tech_biomass_medium = {
+
+        allow = {
+            always = yes
+        }
+
+        folder = {
+            name = zerg_folder
+        position = { x = 0 y = 10 }
+        }
+
+        enable_equipments = {
+            biomass_medium
+            biomass_medium_arch
+        }
+
+        research_cost = 1
+        start_year = 1007
+
+        path = {
+            leads_to_tech = biomass_heavy_tech
+            research_cost_coeff = 1
+        }
+
+        path = {
+            leads_to_tech = tech_nydus_worms
+            research_cost_coeff = 1
+        }
+
+        categories = {
+            zerg_tech
+            race_tech
+        }
+        on_research_complete = {
+            hidden_effect = {
+                fix_weapon_techs = yes
+            }
+        }
+
+
+    }
+
+    tech_nydus_worms = {
+
+        dependencies = {
+			zerg_race = 1
+		}
+
+        allow = {
+            always = yes
+        }
+
+        folder = {
+			name = zerg_folder
+			position = { x = 3 y = 10 }
+		}
+
+        #enable_subunits = {
+        #    drones
+        #}
+
+        enable_equipments = {
+            nydus_worms
+            nydus_worms_arch
+        }
+
+        research_cost = 1
+        start_year = 1007
+
+        #path = {
+        #    leads_to_tech = tech_zerglings
+        #   research_cost_coeff = 1
+        #}
+
+        categories = {
+            zerg_tech
+            race_tech
+        }
+        #on_research_complete = {
+        #    if = {
+		#		limit = {
+		#			has_zerg_race_tech = yes
+		#			NOT = {
+		#				has_template_containing_unit = drones
+		#			}
+		#		}
+		#		hidden_effect = {
+		#			division_template = {
+		#				name = "drones offence"
+		#			
+		#				regiments = {
+		#					drones = { x = 0 y = 0 }
+		#					drones = { x = 1 y = 0 }
+		#				}
+		#				priority = 2
+		#			}
+        #           fix_weapon_techs = yes
+		#		}
+        #   }
+        #}
+       
+        
+    }
+
+    biomass_heavy_tech = {
+
+        allow = {
+            always = yes
+        }
+
+        enable_equipments = {
+            biomass_heavy
+            biomass_heavy_arch
+        }
+        folder = {
+			name = zerg_folder
+			position = { x = 0 y = 15 }
+		}
+
+        #enable_subunits = {
+        #}
+
+        research_cost = 1
+        start_year = 1011
+
+        path = {
+            leads_to_tech = tech_ultralisk
+            research_cost_coeff = 1
+        }
+
+        categories = {
+            zerg_tech
+            race_tech
+        }
+
+        on_research_complete = {
+            hidden_effect = {
+                fix_weapon_techs = yes
+            }
+        }
+    }
+
+    tech_ultralisk = {
+
+        dependencies = {
+			zerg_race = 1
+		}
+
+        allow = {
+            always = yes
+        }
+
+        folder = {
+			name = zerg_folder
+			position = { x = 5 y = 15 }
+		}
+
+        enable_subunits = {
+            ultralisk
+        }
+
+        research_cost = 1
+        start_year = 1007
+
+        categories = {
+            zerg_tech
+            race_tech
+        }
+        on_research_complete = {
+            if = {
+				limit = {
+					has_zerg_race_tech = yes
+					NOT = {
+						has_template_containing_unit = ultralisk
+					}
+				}
+				hidden_effect = {
+					division_template = {
+						name = "ultralisk offence"
+					
+						regiments = {
+							ultralisk = { x = 0 y = 0 }
+							ultralisk = { x = 1 y = 0 }
+						}
+						priority = 2
+					}
+                    fix_weapon_techs = yes
+				}
+            }
+        }
+       
+        
+    }
+
+    tech_hatcheries = {
+
+        dependencies = {
+			zerg_race = 1
+		}
+
+        allow = {
+            always = yes
+        }
+
+        
+        folder = {
+			name = zerg_folder
+			position = { x = 4 y = 15 }
+		}
+
+        #enable_subunits = {
+        #}
+
+        research_cost = 1
+        start_year = 1011
+
+        categories = {
+            zerg_tech
+            race_tech
+        }
+
+        path = {
+            leads_to_tech = tech_filler
+            research_cost_coeff = 1
+        }
+
+        on_research_complete = {
+            hidden_effect = {
+                fix_weapon_techs = yes
+            }
+        }
+    }
+
+    tech_filler = {
+
+        dependencies = {
+			zerg_race = 1
+		}
+
+        allow = {
+            always = yes
+        }
+
+        
+        folder = {
+			name = zerg_folder
+			position = { x = 4 y = 20 }
+		}
+
+        #enable_subunits = {
+        #}
+
+        research_cost = 1
+        start_year = 1011
+
+        categories = {
+            zerg_tech
+            race_tech
+        }
+
+        path = {
+            leads_to_tech = tech_filler
+            research_cost_coeff = 1
+        }
+
+        on_research_complete = {
+            hidden_effect = {
+                fix_weapon_techs = yes
+            }
+        }
+    }
+}

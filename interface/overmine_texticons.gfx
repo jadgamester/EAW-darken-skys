@@ -1,0 +1,13 @@
+spritetypes = {
+
+	spritetype = {
+		name = "GFX_unit_zerglings_icon_small"
+		texturefile = "gfx/texticons/unit_zerglings_icon_small.dds"
+		legacy_lazy_load = no
+	}
+	spritetype = {
+		name = "GFX_nato_unit_zerglings_icon_small"
+		texturefile = "gfx/texticons/nato_unit_zerglings_icon_small.dds"
+		legacy_lazy_load = no
+	}
+}

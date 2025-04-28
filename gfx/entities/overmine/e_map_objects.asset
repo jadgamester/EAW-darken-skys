@@ -1,0 +1,6 @@
+entity = {
+	name = "overmine"
+	pdxmesh = "overmine_mesh"
+
+	state = { name = "idle" 		animation = "idle" }
+}

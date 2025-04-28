@@ -1,0 +1,10 @@
+objectTypes = {
+	pdxmesh = {
+		name = "zergling_mesh"
+		file = "gfx/models/zergling/zerg.mesh"
+
+		animation = { id = "idle"    type = "zergling_idle_animation" }
+
+		scale = 0.4
+	}
+}

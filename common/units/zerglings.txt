@@ -1,0 +1,37 @@
+sub_units = {
+
+	zerglings = {
+		sprite = zerglings
+		map_icon_category = infantry
+		active = no
+
+		type = { infantry }
+
+		group = small_zerg
+
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+			category_heavy_infantry
+		}
+
+		combat_width = 1
+
+		max_organisation = 40
+		max_strength = 140
+		default_morale = 0.3
+		manpower = 500
+
+		maximum_speed = 1
+		training_time = 40
+		weight = 0.2
+
+		supply_consumption = 0.1
+
+		need = {
+			biomass_normal = 250
+		}
+	}
+}

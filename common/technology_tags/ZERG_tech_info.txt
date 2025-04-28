@@ -1,0 +1,13 @@
+
+technology_categories = {
+	zerg_tech
+}
+
+technology_folders = {
+	zerg_folder = {
+		available = {
+			has_zerg_race_tech = yes
+		}
+		ledger = civilian
+	}
+}

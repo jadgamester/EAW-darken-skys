@@ -1,0 +1,59 @@
+﻿capital = 1211
+oob = "OMI_1007"
+set_research_slots = 3
+
+
+set_technology = {
+	tech_drones = 1
+	tech_biomass_normal = 1
+	zerg_race = 1
+}
+set_country_flag = OMI_destroyed_mine
+
+
+recruit_character = OMI_fascist_overmine
+recruit_character = OMI_harmonist_overmine
+
+actually_fix_weapon_techs = yes #THIS HAS TO BE CALLED IN EVERY HISTORY FILE RIGHT AFTER MAIN set_technology!
+
+set_convoys = 69
+set_popularities = {
+	fascism = 100
+	communism = 0
+	neutrality = 0
+	democratic = 0
+}
+set_politics = {
+	ruling_party = fascism
+	election_frequency = 36
+	elections_allowed = no
+}
+add_ideas = {
+	zerg_race
+	limited_exports
+	disarmed_nation
+	closed_economy
+	poor_science_base
+	pre_industrial_society
+	poverty
+}
+set_stability = 0.85
+set_war_support = 0.9
+add_manpower = 3000
+
+set_rule = {
+	can_generate_female_aces = yes
+}
+
+1209 = {
+	start_resistance = yes
+	set_compliance = 25
+	set_resistance = 20
+	set_garrison_strength = 0
+}
+1210 = {
+	start_resistance = yes
+	set_compliance = 20
+	set_resistance = 30
+	set_garrison_strength = 0
+}

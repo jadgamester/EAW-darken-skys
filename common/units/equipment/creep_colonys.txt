@@ -1,0 +1,40 @@
+equipments = {
+	creep_colonys_arch = {
+
+		is_archetype = yes
+		picture = creep_colonys
+		is_buildable = no
+		type = {
+			infantry
+		}
+		group_by = archetype
+
+		interface_category = interface_category_land
+
+		maximum_speed = 6.0
+		reliability = 0.9
+
+		defense = 20
+		breakthrough = 15
+		hardness = 0.6
+
+		soft_attack = 13
+		hard_attack = 2
+
+		lend_lease_cost = 10
+
+		build_cost_ic = 1
+		resources = {
+			steel = 1
+			tungsten = 2
+		}
+		supply_truck = yes
+	}
+
+	creep_colonys = {
+
+		archetype = creep_colonys_arch
+		picture = creep_colonys
+		is_buildable = yes
+	}
+}

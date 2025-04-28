@@ -1,0 +1,33 @@
+state={
+	id=1210
+	name="STATE_1210"
+	resources={
+		tungsten = 15
+		chromium = 3
+	}
+
+	history={
+		owner = OMI
+		add_core_of = CRY
+		victory_points = { 20310 25 }
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			415 = {
+				bunker = 1
+			}
+			20310 = {
+				bunker = 1
+			}
+		}
+
+	}
+
+	provinces={
+		415 20310
+	}
+	manpower=545315
+	buildings_max_level_factor=1.000
+	state_category=rural 
+	local_supplies=0.000
+}

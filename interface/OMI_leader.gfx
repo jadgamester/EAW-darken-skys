@@ -1,0 +1,10 @@
+spritetypes = {
+	spritetype = {
+		name = "GFX_portrait_OMI_overmine_large"
+		texturefile = "gfx/leaders/OMI/portraite_OMI_overmine_large.dds"
+	}
+	spritetype = {
+		name = "GFX_portrait_OMI_overmine_small"
+		texturefile = "gfx/leaders/OMI/portrait_OMI_overmine_small.dds"
+	}
+}

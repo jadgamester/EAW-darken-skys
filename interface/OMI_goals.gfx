@@ -1,0 +1,7 @@
+spriteTypes = {	
+
+	SpriteType = {
+		name = "GFX_goal_derpy"
+		texturefile = "gfx/interface/goals/derpy.dds"			
+	}
+}

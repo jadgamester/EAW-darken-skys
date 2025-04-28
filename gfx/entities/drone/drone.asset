@@ -1,0 +1,6 @@
+entity = {
+	name = "drones_entity"
+	pdxmesh = "drone_mesh"
+
+	state = { name = "idle" 		animation = "idle" }
+}

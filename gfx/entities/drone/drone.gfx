@@ -1,0 +1,10 @@
+objectTypes = {
+	pdxmesh = {
+		name = "drone_mesh"
+		file = "gfx/models/drone/drone.mesh"
+
+		animation = { id = "idle"    type = "drone_idle" }
+
+		scale = 1
+	}
+}

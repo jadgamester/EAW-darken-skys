@@ -1,0 +1,10 @@
+objectTypes = {
+	pdxmesh = {
+		name = "ultralisk_mesh"
+		file = "gfx/models/ultralisk/ultralisk.mesh"
+
+		animation = { id = "idle"    type = "ultralisk_idle_animation" }
+
+		scale = 0.4
+	}
+}

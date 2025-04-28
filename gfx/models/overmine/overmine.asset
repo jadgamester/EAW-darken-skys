@@ -1,0 +1,4 @@
+animation = {
+	name = "overmine_idle"
+	file = "overmine_idle.anim"
+}

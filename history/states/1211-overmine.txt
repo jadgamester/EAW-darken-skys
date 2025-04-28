@@ -1,0 +1,34 @@
+state={
+	id=1211
+	name="STATE_1211"
+	resources={
+		steel = 5
+		crystals = 9
+	}
+
+	history={
+		owner = OMI
+		add_core_of = OMI
+		victory_points = { 4452 50 }
+		buildings = {
+			infrastructure = 2
+			arms_factory = 3
+			industrial_complex = 4
+			4452 = {
+				bunker = 3
+			}
+			20311 = {
+				bunker = 2
+			}
+		}
+
+	}
+
+	provinces={
+		4452 20311
+	}
+	manpower=1356043
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}
